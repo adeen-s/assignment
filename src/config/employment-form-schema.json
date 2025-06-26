@@ -1,0 +1,132 @@
+{
+  "id": "employment-form",
+  "title": "Edit Life Event",
+  "sections": [
+    {
+      "id": "employment-details",
+      "groups": [
+        {
+          "fields": [
+            {
+              "name": "employerName",
+              "type": "text",
+              "label": "Employer's Name",
+              "required": true,
+              "placeholder": "Enter employer name",
+              "maxLength": 100,
+              "trim": true,
+              "grid": {
+                "xs": 12
+              }
+            }
+          ],
+          "direction": "row",
+          "spacing": 2
+        },
+        {
+          "fields": [
+            {
+              "name": "currency",
+              "type": "select",
+              "label": "Currency",
+              "required": true,
+              "defaultValue": "USD",
+              "options": [
+                { "value": "USD", "label": "USD ($) - US Dollar" },
+                { "value": "EUR", "label": "EUR (€) - Euro" },
+                { "value": "GBP", "label": "GBP (£) - British Pound" },
+                { "value": "INR", "label": "INR (₹) - Indian Rupee" }
+              ],
+              "grid": {
+                "xs": 12,
+                "sm": 4
+              }
+            },
+            {
+              "name": "annualGrossIncome",
+              "type": "currency",
+              "label": "Annual Gross Income",
+              "required": true,
+              "min": 1,
+              "max": 1000000000,
+              "grid": {
+                "xs": 12,
+                "sm": 8
+              }
+            }
+          ],
+          "direction": "row",
+          "spacing": 2
+        },
+        {
+          "fields": [
+            {
+              "name": "employmentStartDate",
+              "type": "date",
+              "label": "Employment Start Date",
+              "required": true,
+              "disableFuture": true,
+              "grid": {
+                "xs": 12,
+                "sm": 6
+              }
+            },
+            {
+              "name": "employmentEndDate",
+              "type": "date",
+              "label": "Employment End Date",
+              "required": false,
+              "grid": {
+                "xs": 12,
+                "sm": 6
+              }
+            }
+          ],
+          "direction": "row",
+          "spacing": 2
+        },
+        {
+          "fields": [
+            {
+              "name": "notes",
+              "type": "textarea",
+              "label": "Notes",
+              "required": false,
+              "rows": 6,
+              "maxLength": 500,
+              "grid": {
+                "xs": 12
+              }
+            }
+          ],
+          "direction": "row"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "cancel",
+      "label": "Cancel",
+      "type": "reset",
+      "variant": "outlined",
+      "size": "large"
+    },
+    {
+      "id": "submit",
+      "label": "Save",
+      "type": "submit",
+      "variant": "contained",
+      "size": "large"
+    }
+  ],
+  "layout": {
+    "maxWidth": 800,
+    "padding": 4,
+    "spacing": 3
+  },
+  "validation": {
+    "mode": "onBlur",
+    "reValidateMode": "onChange"
+  }
+}
